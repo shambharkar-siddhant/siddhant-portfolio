@@ -310,14 +310,14 @@ export default function HomePage() {
             className="relative z-10"
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-4 flex items-center text-gray-300">
-              <span className="mr-2">🧙‍♂️</span> Disclaimer for Muggles:
+              <span className="mr-2">🧙‍♂️</span> Not a techie? Totally okay.
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-              If you're not a tech wizard and just here to "see what Siddhant does", do yourself a favor — skip the API spells and terminal incantations.
+              This site has a lot of geeky stuff — system diagrams, a terminal, an API playground... you get the idea. If that sounds like something you'd rather not decode, no worries.  
               <br /><br />
-              Just head to my profile like a good Muggle.
+              Just head over to my profile — it's a plain and simple overview of what I do, no tech jargon included.  
               <br /><br />
-              The rest of this site may look like dark magic, because... well, it is.
+              You won't need to know what “POST /api/profile" means, promise.
             </p>
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -366,7 +366,7 @@ export default function HomePage() {
         
         <ServiceSection 
           title="Dev Console" 
-          description="Interact directly with a simulated backend through a command-line interface. Execute commands to query services, check status, and manage operations. Experience the power of command-line tools for backend operations." 
+          description="A custom-built terminal with command support. Interact directly with a simulated backend through a command-line interface. Execute commands to query services, check status, and manage operations. Experience the power of command-line tools for backend operations." 
           icon={<Terminal size={24} />} 
           linkTo="/terminal"
           align="right"
