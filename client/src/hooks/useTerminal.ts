@@ -27,7 +27,7 @@ const commandHandlers = {
     if (args.includes("services")) {
       return initialServices.map(s => `${s.id} (${s.status})`).join("\n");
     } else if (args.includes("projects")) {
-      return "backend-optimization\ncloud-migration\nperformance-monitoring\nscalability-framework\nsecurity-hardening";
+      return "Network Architecture Search Using Meta Hueristics Algorithm\nPredictive StockTrader\nFake Face Detection\nChat Application with Abusive Text Detection";
     } else {
       return "services/  projects/  resume.txt  skills.json  contact.md";
     }
@@ -46,37 +46,43 @@ const commandHandlers = {
     if (file === "resume.txt") {
       return `# PROFESSIONAL PROFILE
       
-Senior Backend Engineer with 8+ years of experience developing scalable microservice architectures.
+Backend Engineer, developing scalable microservice architectures.
 Specialized in high-performance systems, distributed computing, and real-time data processing.
 
 # TECHNICAL SKILLS
-- Languages: Node.js, Python, Rust, Go
-- Databases: PostgreSQL, MongoDB, Redis, Elasticsearch
-- Cloud: AWS, GCP, Kubernetes, Docker
-- Tools: Prometheus, Grafana, ELK Stack
+- Languages: Node.js, Python, C++, SQL
+- Databases: PostgreSQL, Redis, MongoDB
+- Cloud: AWS, Docker
+- Tools: Prometheus, Grafana, Postman
 
 # EXPERIENCE
-Senior Backend Engineer at ScaleNet Systems (2021-Present)
-- Designed and implemented a distributed processing system handling 10K+ events/sec
-- Reduced service latency by 42% through optimization and caching strategies
-- Led migration from monolith to microservices architecture
+Senior Backend Engineer at Aparoksha Financial Services Private Limited (2024-Present)
+- Created an efficient loan processing system for two-wheelers using Python and Falcon, which cut transaction times by
+30% and improved system security.
+- Developed a scalable integration pipeline with Bash and Python across distributed platforms, which doubled the rate of
+new lender additions and greatly enhanced business scalability.
+- Guided a team in building a de-duplication server to combat loan fraud, leading to an 80% reduction in duplicate
+applications and significantly strengthening data integrity. Encouraged strong collaboration among team members to
+enhance project delivery.
 
-Backend Engineer at DataFlow Technologies (2018-2021)
-- Built real-time data processing pipeline for financial transactions
-- Implemented fault-tolerant job scheduling system with 99.99% uptime`;
+Full-Stack Developer at Expert Script Soft-Solutions (2020-2022)
+- Created a product recommendation system using React and Machine learning, resulting in a 20% increase in user
+engagement.
+- Achieved 99.9% system reliability and uptime by integrating Apache Kafka for efficient real-time data synchronization
+and inter-service communication.`;
     } else if (file === "skills.json") {
       return `{
   "backend": ["API Design", "Microservices", "Event-Driven Architecture", "Message Queues"],
-  "databases": ["Query Optimization", "Sharding", "Replication", "ACID Compliance"],
-  "devops": ["CI/CD", "Infrastructure as Code", "Monitoring", "Auto-scaling"],
-  "languages": ["JavaScript/TypeScript", "Python", "Rust", "SQL", "Go"],
-  "soft_skills": ["Technical Leadership", "Mentoring", "Problem Solving", "Documentation"]
+  "databases": ["Query Optimization", "Replication", "ACID Compliance"],
+  "devops": ["CI/CD", "Monitoring", "Auto-scaling"],
+  "languages": ["Python", "C++", "SQL", "Shell Scripting"],
+  "soft_skills": ["Technical Leadership", "Problem Solving", "Documentation"]
 }`;
     } else if (file === "contact.md") {
       return `# Contact Information
-- Email: hello@microservicesymphony.com
-- LinkedIn: linkedin.com/in/backendarchitect
-- GitHub: github.com/microservicesymphony
+- Email: shambharkarsiddhant0698@gmail.com
+- LinkedIn: https://www.linkedin.com/in/siddhant-shambharkar/
+- GitHub: https://github.com/shambharkar-siddhant/siddhant-portfolio
 
 Feel free to reach out for collaboration opportunities or to discuss backend architecture challenges!`;
     } else {

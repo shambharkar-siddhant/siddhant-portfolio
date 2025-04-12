@@ -19,14 +19,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Projects endpoint
   app.get('/api/projects', (req: Request, res: Response) => {
     const limit = parseInt(req.query.limit as string) || 10;
-    const status = req.query.status as string || 'active';
+    const status = req.query.status as string || 'completed';
     
     res.json({
       projects: [
         { id: "p-001", name: "Predictive StockTrader", status: "completed" },
-        { id: "p-002", name: "Cloud Migration", status: "active" },
-        { id: "p-003", name: "Performance Monitoring", status: "active" },
-        { id: "p-004", name: "Scalability Framework", status: "planning" }
+        { id: "p-002", name: "NAS using Meta Heuristic Algorithms", status: "completed" },
+        { id: "p-003", name: "ChatApp with Abusive Text Detection", status: "completed" },
+        { id: "p-004", name: "Fake Face Detection using Haar", status: "completed" }
       ].filter(project => status === 'all' ? true : project.status === status).slice(0, limit),
       count: 4,
       total: 12
@@ -38,12 +38,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
     const category = req.query.category as string || 'all';
     
     const skills = [
-      { name: "Node.js", category: "backend", level: 95 },
       { name: "Python", category: "backend", level: 85 },
-      { name: "React", category: "frontend", level: 80 },
       { name: "AWS", category: "cloud", level: 90 },
-      { name: "Kubernetes", category: "devops", level: 75 },
-      { name: "PostgreSQL", category: "database", level: 85 }
+      { name: "PostgreSQL", category: "database", level: 85 },
+      { name: "Redis", category: "backend", level: 80 },
+      { name: "Bash", category: "backend", level: 95 },
+      { name: "API's", category: "backend", level: 95 },
+      { name: "Kafke", category: "devops", level: 80},
+      { name: "Shell Script", category: "backend", level: 90}
     ];
     
     res.json({

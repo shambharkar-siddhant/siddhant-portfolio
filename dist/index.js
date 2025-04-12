@@ -6,21 +6,22 @@ import { createServer } from "http";
 async function registerRoutes(app2) {
   app2.get("/api/profile", (req, res) => {
     res.json({
+      id: "3.141592....",
       name: "Siddhant Shambharkar",
       email: "shambharkarsiddhant0698@gmail.com",
-      role: "Backend Developer",
+      role: "Software Developer",
       createdAt: "2023-01-15T08:30:00Z"
     });
   });
   app2.get("/api/projects", (req, res) => {
     const limit = parseInt(req.query.limit) || 10;
-    const status = req.query.status || "active";
+    const status = req.query.status || "completed";
     res.json({
       projects: [
-        { id: "p-001", name: "NAS using Meta Heuristics", status: "completed" },
-        { id: "p-002", name: "Chat Application with Abusive Text Detection", status: "completed" },
-        { id: "p-003", name: "Fake Face Detection Using Haar", status: "completed" },
-        { id: "p-004", name: "Predictive StockTrader: AI-Driven Market Investment Platform", status: "completed" }
+        { id: "p-001", name: "Predictive StockTrader", status: "completed" },
+        { id: "p-002", name: "NAS using Meta Heuristic Algorithms", status: "completed" },
+        { id: "p-003", name: "ChatApp with Abusive Text Detection", status: "completed" },
+        { id: "p-004", name: "Fake Face Detection using Haar", status: "completed" }
       ].filter((project) => status === "all" ? true : project.status === status).slice(0, limit),
       count: 4,
       total: 12
@@ -29,15 +30,14 @@ async function registerRoutes(app2) {
   app2.get("/api/skills", (req, res) => {
     const category = req.query.category || "all";
     const skills = [
-      { name: "Node.js", category: "backend", level: 95 },
-      { name: "Python", category: "backend", level: 90 },
-      { name: "React", category: "frontend", level: 80 },
+      { name: "Python", category: "backend", level: 85 },
       { name: "AWS", category: "cloud", level: 90 },
-      { name: "Bash", category: "devops", level: 85 },
-      { name: "NoSQL", category: "database", level: 85 },
-      { name: "PostgreSQL", category: "database", level: 90 },
-      { name: "Flask", category: "database", level: 90 },
-      { name: "Socket Programming", category: "database", level: 90 }
+      { name: "PostgreSQL", category: "database", level: 85 },
+      { name: "Redis", category: "backend", level: 80 },
+      { name: "Bash", category: "backend", level: 95 },
+      { name: "API's", category: "backend", level: 95 },
+      { name: "Kafke", category: "devops", level: 80 },
+      { name: "Shell Script", category: "backend", level: 90 }
     ];
     res.json({
       skills: category === "all" ? skills : skills.filter((skill) => skill.category === category)

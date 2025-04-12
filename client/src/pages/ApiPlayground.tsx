@@ -62,14 +62,14 @@ const ENDPOINTS: ApiEndpoint[] = [
     description: "List all projects",
     params: [
       { name: "limit", type: "number", default: 10, description: "Number of projects to return" },
-      { name: "status", type: "string", default: "active", description: "Filter by project status" }
+      { name: "status", type: "string", default: "completed", description: "Filter by project status" }
     ],
     responseTime: 78,
     responseStatus: 200,
     response: {
       projects: [
         { id: "p-001", name: "Backend Optimization", status: "completed" },
-        { id: "p-002", name: "Cloud Migration", status: "active" },
+        { id: "p-002", name: "Cloud Migration", status: "completed" },
         { id: "p-003", name: "Performance Monitoring", status: "active" },
         { id: "p-004", name: "Scalability Framework", status: "planning" }
       ],
@@ -317,7 +317,7 @@ export default function ApiPlayground() {
   return (
     <div className="container mx-auto py-8 px-4 md:px-6">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">API Explorer</h1>
+        <h1 className="text-3xl font-bold mb-2 text-gray-100">API Explorer</h1>
         <p className="text-muted-foreground">
           Interact with the portfolio APIs and see real-time responses. Test performance and explore endpoints.
         </p>

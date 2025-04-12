@@ -12,14 +12,15 @@ export default function Header() {
     setActiveView(view);
   };
   
+  const isHome = location === "/";
   const isProfileActive = location === "/profile";
 
   return (
     <header className="bg-background border-b border-gray-200 dark:border-gray-800">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="w-full px-6 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <Link href="/">
-            <a className="font-mono font-bold text-xl text-gray-200" title="my home directory">~/</a>
+            <a className="font-mono font-bold text-xl text-gray-100">~/home</a>
           </Link>
         </div>
         
@@ -28,10 +29,10 @@ export default function Header() {
             variant={activeView === 'dashboard' ? "default" : "ghost"}
             size="sm"
             className="gap-2 text-gray-100"
-            onClick={() => handleNavigation("/", "dashboard")}
+            onClick={() => handleNavigation("/dashboard", "dashboard")}
           >
             <BarChart className="h-4 w-4 text-gray-100" />
-            System Health
+            Dashboard
           </Button>
           
           <Button 
@@ -81,11 +82,11 @@ export default function Header() {
           <Button 
             variant="ghost" 
             className={`rounded-none h-12 ${activeView === 'dashboard' ? 'bg-gray-100 dark:bg-gray-800' : ''}`}
-            onClick={() => handleNavigation("/", "dashboard")}
+            onClick={() => handleNavigation("/dashboard", "dashboard")}
           >
             <div className="flex flex-col items-center justify-center">
               <BarChart className="h-4 w-4" />
-              <span className="text-xs mt-1">Dashboard</span>
+              <span className="text-xs mt-1">SysArch</span>
             </div>
           </Button>
           

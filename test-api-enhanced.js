@@ -46,7 +46,7 @@ async function testEndpoint(baseUrl, method, path, body = null) {
 async function runTests() {
   const endpoints = [
     { method: 'GET', path: '/api/profile' },
-    { method: 'GET', path: '/api/projects?status=active' },
+    { method: 'GET', path: '/api/projects?status=completed' },
     { method: 'GET', path: '/api/skills?category=backend' },
     { 
       method: 'POST', 

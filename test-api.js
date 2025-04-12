@@ -21,7 +21,7 @@ const testEndpoints = async () => {
   // Test the GET /api/projects endpoint
   try {
     console.log("\nTesting GET /api/projects...");
-    const projectsResponse = await fetch(`${BASE_URL}/api/projects?status=active`);
+    const projectsResponse = await fetch(`${BASE_URL}/api/projects?status=completed`);
     const projectsData = await projectsResponse.json();
     console.log("Status:", projectsResponse.status);
     console.log("Response:", JSON.stringify(projectsData, null, 2));
