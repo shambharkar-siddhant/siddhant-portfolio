@@ -357,7 +357,7 @@ export default function HomePage() {
       {/* Service Sections */}
       <div className="container mx-auto px-6 py-12 text-gray-100">
         <ServiceSection 
-          title="System Architecture" 
+          title="How I Build Stuff"  
           description="A real-time visualization of microservice architecture. Monitor service health, view logs, and see how different components interact with each other. Experience the complexity of distributed systems through an intuitive interface." 
           icon={<Server size={24} />} 
           linkTo="/dashboard"
@@ -365,7 +365,7 @@ export default function HomePage() {
         />
         
         <ServiceSection 
-          title="Terminal" 
+          title="Dev Console" 
           description="Interact directly with a simulated backend through a command-line interface. Execute commands to query services, check status, and manage operations. Experience the power of command-line tools for backend operations." 
           icon={<Terminal size={24} />} 
           linkTo="/terminal"
