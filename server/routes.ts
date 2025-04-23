@@ -81,7 +81,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         res.status(201).json({
           success: true,
           status: 'delivered',
-          formspree: result
+          delivery_result: result
         });
       } else {
         res.status(500).json({

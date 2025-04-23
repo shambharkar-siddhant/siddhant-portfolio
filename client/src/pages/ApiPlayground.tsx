@@ -142,6 +142,7 @@ export default function ApiPlayground() {
   
   useEffect(() => {
     setActiveView('api');
+  
     // Initialize params with defaults
     const defaultParams: {[key: string]: string | number} = {};
     activeEndpoint.params.forEach(param => {
@@ -150,6 +151,12 @@ export default function ApiPlayground() {
       }
     });
     setParams(defaultParams);
+  
+    // ✅ Reset to the request tab and clear previous response
+    setActiveTab('request');
+    setResponse('');
+    setResponseStatus(null);
+    setResponseTime(null);
   }, [activeEndpoint, setActiveView]);
   
   const handleParamChange = (name: string, value: string) => {
