@@ -197,25 +197,25 @@ const DeveloperProfile: React.FC = () => {
                 my strong technical skills to tackle complex problems and drive business innovation.
               </p>
               
-              <Tabs defaultValue="about" className="w-full">
+              <Tabs value={selectedTab} onValueChange={setSelectedTab} className="w-full">
                 <TabsList className="grid grid-cols-5 mb-6">
-                  <TabsTrigger value="about" onClick={() => setSelectedTab('about')}>
+                  <TabsTrigger value="about" onMouseEnter={() => setSelectedTab('about')}>
                     <User className="h-4 w-4 mr-2 md:mr-0 lg:mr-2" />
                     <span className="hidden md:inline-block">About</span>
                   </TabsTrigger>
-                  <TabsTrigger value="skills" onClick={() => setSelectedTab('skills')}>
+                  <TabsTrigger value="skills" onMouseEnter={() => setSelectedTab('skills')}>
                     <Code className="h-4 w-4 mr-2 md:mr-0 lg:mr-2" />
                     <span className="hidden md:inline-block">Skills</span>
                   </TabsTrigger>
-                  <TabsTrigger value="experience" onClick={() => setSelectedTab('experience')}>
+                  <TabsTrigger value="experience" onMouseEnter={() => setSelectedTab('experience')}>
                     <Briefcase className="h-4 w-4 mr-2 md:mr-0 lg:mr-2" />
                     <span className="hidden md:inline-block">Experience</span>
                   </TabsTrigger>
-                  <TabsTrigger value="education" onClick={() => setSelectedTab('education')}>
+                  <TabsTrigger value="education" onMouseEnter={() => setSelectedTab('education')}>
                     <GraduationCap className="h-4 w-4 mr-2 md:mr-0 lg:mr-2" />
                     <span className="hidden md:inline-block">Education</span>
                   </TabsTrigger>
-                  <TabsTrigger value="projects" onClick={() => setSelectedTab('projects')}>
+                  <TabsTrigger value="projects" onMouseEnter={() => setSelectedTab('projects')}>
                     <GitCommit className="h-4 w-4 mr-2 md:mr-0 lg:mr-2" />
                     <span className="hidden md:inline-block">Projects</span>
                   </TabsTrigger>

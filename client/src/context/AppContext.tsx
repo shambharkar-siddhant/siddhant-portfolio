@@ -11,8 +11,8 @@ interface AppContextType {
   setModalOpen: (open: boolean) => void;
   selectedService: string | null;
   setSelectedService: (service: string | null) => void;
-  activeView: 'dashboard' | 'terminal' | 'api';
-  setActiveView: (view: 'dashboard' | 'terminal' | 'api') => void;
+  activeView: 'dashboard' | 'terminal' | 'api' | null;
+  setActiveView: (view: 'dashboard' | 'terminal' | 'api' | null) => void;
   terminalHistory: TerminalCommand[];
   addTerminalCommand: (command: string, output: string) => void;
   clearTerminal: () => void;

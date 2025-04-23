@@ -310,7 +310,7 @@ export default function HomePage() {
             className="relative z-10"
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-4 flex items-center text-gray-300">
-              <span className="mr-2">🧙‍♂️</span> Not a techie? Totally okay.
+             Not a techie? Totally okay.
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
               This site has a lot of geeky stuff — system diagrams, a terminal, an API playground... you get the idea. If that sounds like something you'd rather not decode, no worries.  
@@ -343,7 +343,6 @@ export default function HomePage() {
                     }}
                     className="mr-2"
                   >
-                    🧙‍♂️
                   </motion.span>
                   <span>Go to Profile</span>
                   <User className="ml-2 h-5 w-5 transition-transform group-hover:scale-110" />
@@ -357,7 +356,7 @@ export default function HomePage() {
       {/* Service Sections */}
       <div className="container mx-auto px-6 py-12 text-gray-100">
         <ServiceSection 
-          title="How I Build Stuff"  
+          title="How I Show System Architecture"  
           description="A real-time visualization of microservice architecture. Monitor service health, view logs, and see how different components interact with each other. Experience the complexity of distributed systems through an intuitive interface." 
           icon={<Server size={24} />} 
           linkTo="/dashboard"

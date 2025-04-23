@@ -43,16 +43,45 @@ async function registerRoutes(app2) {
       skills: category === "all" ? skills : skills.filter((skill) => skill.category === category)
     });
   });
-  app2.post("/api/contact", (req, res) => {
+  app2.post("/api/contact", async (req, res) => {
     const { name, email, message } = req.body;
     if (!name || !email || !message) {
       return res.status(400).json({ error: "Missing required fields" });
     }
-    res.status(201).json({
-      success: true,
-      messageId: "msg-" + Math.floor(1e4 + Math.random() * 9e4),
-      status: "delivered"
-    });
+    const combinedMessage = `Name: ${name}
+Email: ${email}
+Message: ${message}`;
+    try {
+      const formspreeRes = await fetch("https://formspree.io/f/mjkwvrvo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: combinedMessage,
+          _replyto: email
+        })
+      });
+      const result = await formspreeRes.json();
+      if (formspreeRes.ok) {
+        res.status(201).json({
+          success: true,
+          status: "delivered",
+          formspree: result
+        });
+      } else {
+        res.status(500).json({
+          error: "Formspree failed",
+          details: result
+        });
+      }
+    } catch (error) {
+      console.error("Error sending to Formspree:", error);
+      res.status(500).json({
+        error: "An error occurred sending to Formspree",
+        details: error.message
+      });
+    }
   });
   const httpServer = createServer(app2);
   return httpServer;

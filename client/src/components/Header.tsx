@@ -2,6 +2,9 @@ import { useAppContext } from "@/context/AppContext";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Activity, TerminalSquare, Code, User, BarChart } from "lucide-react";
+import { useEffect } from "react";
+
+
 
 export default function Header() {
   const { setModalOpen, activeView, setActiveView } = useAppContext();
@@ -15,6 +18,12 @@ export default function Header() {
   const isHome = location === "/";
   const isProfileActive = location === "/profile";
 
+  useEffect(() => {
+    if (location === "/") {
+      setActiveView(null);
+    }
+  }, [location, setActiveView]);
+  
   return (
     <header className="bg-background border-b border-gray-200 dark:border-gray-800">
       <div className="w-full px-6 py-3 flex items-center justify-between">
@@ -26,7 +35,7 @@ export default function Header() {
         
         <nav className="hidden md:flex items-center space-x-1">
           <Button 
-            variant={activeView === 'dashboard' ? "default" : "ghost"}
+            variant={activeView === 'dashboard' && !isHome ? "default" : "ghost"}
             size="sm"
             className="gap-2 text-gray-100"
             onClick={() => handleNavigation("/dashboard", "dashboard")}
@@ -36,7 +45,7 @@ export default function Header() {
           </Button>
           
           <Button 
-            variant={activeView === 'terminal' ? "default" : "ghost"}
+            variant={activeView === 'terminal' && !isHome ? "default" : "ghost"}
             size="sm"
             className="gap-2 text-gray-100"
             onClick={() => handleNavigation("/terminal", "terminal")}
@@ -46,7 +55,7 @@ export default function Header() {
           </Button>
           
           <Button 
-            variant={activeView === 'api' ? "default" : "ghost"}
+            variant={activeView === 'api' && !isHome ? "default" : "ghost"}
             size="sm"
             className="gap-2 text-gray-100"
             onClick={() => handleNavigation("/api", "api")}
@@ -68,7 +77,10 @@ export default function Header() {
           <Button 
             variant={isProfileActive ? "default" : "ghost"} 
             size="icon"
-            onClick={() => navigate("/profile")}
+            onClick={() => {
+              navigate("/profile");
+              setActiveView(null);
+            }}
             title="Developer Profile"
           >
             <User className="h-5 w-5 text-gray-100" />
