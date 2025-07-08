@@ -398,9 +398,9 @@ export default function HomePage() {
             Go ahead, explore the repo of me.
           </h2>
           <p className="text-lg text-muted-foreground mb-8 text-gray-100">
-            And if you're feeling brave (or just curious), hit the /api/contact 
-            endpoint in the API Playground with your coordinates and a short message. 
-            I promise my webhook (a.k.a. me) will respond—eventually.
+            If you made it this far and still think I'm cool— thank you!😇
+            <br /><br />  If you'd like to say hi or talk more
+            hit the /api/contect in API Playground. Promise I will reply instantly!
             <br /><br />
             That's it.
             <br />

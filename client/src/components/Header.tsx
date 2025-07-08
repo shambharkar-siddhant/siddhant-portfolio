@@ -70,9 +70,18 @@ export default function Header() {
             variant="outline" 
             size="sm" 
             className="hidden md:flex text-gray-100"
+            onClick={() => window.open("https://siddhants-travel-tails.vercel.app/", "_blank")}
+          >
+            Travel Blog
+          </Button>
+          
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="hidden md:flex text-gray-100"
             onClick={() => window.open("https://www.linkedin.com/in/siddhant-shambharkar/", "_blank")}
           >
-            View LinkedIn
+            LinkedIn
           </Button>
           <Button 
             variant={isProfileActive ? "default" : "ghost"} 
