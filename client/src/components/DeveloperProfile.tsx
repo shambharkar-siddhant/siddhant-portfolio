@@ -28,8 +28,10 @@ import {
   MessageSquare,
   TrendingUp,
   GitCommit,
-  ShieldCheck
+  ShieldCheck,
+  Bot
 } from 'lucide-react';
+import { desc } from 'drizzle-orm';
 
 const DeveloperProfile: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState('about');
@@ -101,6 +103,17 @@ const DeveloperProfile: React.FC = () => {
   ];
   
   const projects = [
+    {
+      name: 'CodePulse: Smart Github Bot',
+      date: 'July 2025',
+      description: [
+        'Developed a modular GitHub assistant with a backend MCP server that enables LLMs to manage repo rules, review code, and answer natural-language queries — with multi-user sessions, scoped memory, and full context control',
+        'Achieved instant AI summaries and rule checks on every PR via GitHub webhooks, reducing manual review effort by 40% and boosting team response times by 60-90 seconds per PR on average',
+        'Built with FastAPI, PostgreSQL, Redis, and a pluggable LLM engine (OpenAI, Claude, local models), enabling seamless integration, real-time PR interaction, and secure session-based collaboration.'
+      ],
+      tech: ['FastAPI', 'PostgreSQL', 'Redis', 'OpenAI', 'Python', 'LLM', 'React'],
+      icon: <Bot />
+    },
     {
       name: 'Chat Application with Abusive Text Detection',
       date: 'February 2023',
