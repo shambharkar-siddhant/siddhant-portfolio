@@ -84,6 +84,14 @@ export default function Header() {
             LinkedIn
           </Button>
           <Button 
+            variant="outline" 
+            size="sm" 
+            className="hidden md:flex text-gray-100"
+            onClick={() => window.open("https://shambharkarsiddhant.medium.com/", "_blank")}
+          >
+            Medium
+          </Button>
+          <Button 
             variant={isProfileActive ? "default" : "ghost"} 
             size="icon"
             onClick={() => {
