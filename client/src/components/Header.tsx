@@ -79,6 +79,15 @@ export default function Header() {
             variant="outline" 
             size="sm" 
             className="hidden md:flex text-gray-100"
+            onClick={() => window.open("https://github.com/shambharkar-siddhant", "_blank")}
+          >
+            GitHub
+          </Button>
+
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="hidden md:flex text-gray-100"
             onClick={() => window.open("https://www.linkedin.com/in/siddhant-shambharkar/", "_blank")}
           >
             LinkedIn
