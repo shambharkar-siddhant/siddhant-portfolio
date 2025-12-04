@@ -15,7 +15,8 @@ import {
   Phone, 
   Linkedin, 
   Award, 
-  ChevronRight, 
+  ChevronRight,
+  Github,
   Cpu, 
   Layers, 
   Globe,
@@ -82,14 +83,13 @@ const DeveloperProfile: React.FC = () => {
   
   const education = [
     {
-      degree: 'Master of Technology in Computer Science',
+      degree: 'M.Tech in Computer Science',
       institution: 'IIT Kharagpur',
       period: 'August 2022 - May 2024',
-      gpa: '8.02',
-      courses: ['Algorithm Analysis', 'Computer Networks', 'Operating System', 'Computer Vision', 'DBMS', 'Image Processing']
+      gpa: '8.02'
     },
     {
-      degree: 'Bachelor of Engineering in Information Technology',
+      degree: 'B.E. in Information Technology',
       institution: 'MIT College of Engineering, Pune',
       period: 'August 2017 - May 2020',
       gpa: '6.99',
@@ -104,6 +104,19 @@ const DeveloperProfile: React.FC = () => {
   
   const projects = [
     {
+      name: 'ChronosQ: Distributed Job Broker System',
+      date: 'Dec 2025',
+      description: [
+        'Built a lightweight, file-backed distributed job broker that handles high-volume workflows with zero external message queue dependencies.',
+        'Designed a lock-free, atomic job-assignment mechanism using filesystem semantics, ensuring safe concurrency across multiple workers.',
+        'Added a pluggable rule engine & YAML-based workflow definitions, enabling dynamic execution paths and customizable job processing.',
+        'Implemented observability features, metrics, job traces, failure retries, and worker-health checks. making the system reliable in production-like loads.'
+      ],
+      tech: ['Python', 'Bash', 'SQLite', 'Concurrency'],
+      icon: <Cpu />,
+      link: 'https://github.com/shambharkar-siddhant/ChronosQ'
+    },
+    {
       name: 'CodePulse: Smart Github Bot',
       date: 'July 2025',
       description: [
@@ -112,7 +125,8 @@ const DeveloperProfile: React.FC = () => {
         'Built with FastAPI, PostgreSQL, Redis, and a pluggable LLM engine (OpenAI, Claude, local models), enabling seamless integration, real-time PR interaction, and secure session-based collaboration.'
       ],
       tech: ['FastAPI', 'PostgreSQL', 'Redis', 'OpenAI', 'Python', 'LLM', 'React'],
-      icon: <Bot />
+      icon: <Bot />,
+      link: 'https://github.com/shambharkar-siddhant/CodePulse'
     },
     {
       name: 'Chat Application with Abusive Text Detection',
@@ -161,16 +175,18 @@ const DeveloperProfile: React.FC = () => {
   ];
   
   const achievements = [
-    'Earned victory in the Capture the Flag (CTF) Challenge organized by CloudSEK company',
-    'Organized "Innovating Technologies" Inter-College paper presentation competition with 35 participants',
-    'Served as Students Coordinator at MMM Hall, IIT Kharagpur organizing technical workshops and events',
-    'Secured first prize among 47 participants in the Solo Dance competition at "Gracia-2018" cultural fest'
+    'Build reliable backend systems, workflow engines, and automation pipelines that handle scale and real-world complexity.',
+    'Work end-to-end — backend, frontend, databases, infra, and deployments on AWS.',
+    'Think in systems: concurrency, retries, observability, and production-grade resilience.',
+    'Automate everything possible — bots, pipelines, integrations, and developer tools.',
+    'I enjoy solving deep technical problems at the intersection of backend engineering and infrastructure.'
   ];
   
   const contactInfo = {
     email: 'shambharkarsiddhant0698@gmail.com',
     phone: '+918149600848',
-    linkedin: 'linkedin.com/in/siddhant-shambharkar'
+    linkedin: 'linkedin.com/in/siddhant-shambharkar',
+    github: 'https://github.com/shambharkar-siddhant'
   };
   
   return (
@@ -187,28 +203,40 @@ const DeveloperProfile: React.FC = () => {
                   </CardDescription>
                 </div>
                 <div className="flex flex-col items-end space-y-1">
-                  <div className="flex items-center">
-                    <Mail className="h-4 w-4 mr-2" />
-                    <span className="text-sm">{contactInfo.email}</span>
-                  </div>
+                    <a 
+                      href={`mailto:${contactInfo.email}`} 
+                      className="flex items-center hover:text-primary transition"
+                    >
+                      <Mail className="h-4 w-4 mr-2" />
+                      <span className="text-sm underline">{contactInfo.email}</span>
+                    </a>
+
                   <div className="flex items-center">
                     <Phone className="h-4 w-4 mr-2" />
                     <span className="text-sm">{contactInfo.phone}</span>
                   </div>
-                  <div className="flex items-center">
-                    <Linkedin className="h-4 w-4 mr-2" />
-                    <span className="text-sm">{contactInfo.linkedin}</span>
-                  </div>
+                    <a 
+                      href={`https://${contactInfo.linkedin}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center hover:text-primary transition"
+                    >
+                      <Linkedin className="h-4 w-4 mr-2" />
+                      <span className="text-sm underline">{contactInfo.linkedin}</span>
+                    </a>
+                    <a 
+                      href={`https://${contactInfo.github}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center hover:text-primary transition"
+                    >
+                      <Github className="h-4 w-4 mr-2" />
+                      <span className="text-sm underline">{contactInfo.github}</span>
+                    </a>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground mb-6">
-                Accomplished Software Engineer holding a Master's degree in Computer Science from IIT
-                Kharagpur, with a focus on full-stack development. I have significant experience in Python, JavaScript, and cloud
-                infrastructure. I have a proven ability to deploy scalable applications and thrive in high-pressure situations, using
-                my strong technical skills to tackle complex problems and drive business innovation.
-              </p>
               
               <Tabs value={selectedTab} onValueChange={setSelectedTab} className="w-full">
                 <TabsList className="grid grid-cols-5 mb-6">
@@ -236,10 +264,6 @@ const DeveloperProfile: React.FC = () => {
                 
                 <TabsContent value="about" className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold mb-4 flex items-center">
-                      <Award className="h-5 w-5 mr-2" /> 
-                      Achievements & Activities
-                    </h3>
                     <ul className="space-y-2">
                       {achievements.map((achievement, index) => (
                         <li key={index} className="flex items-start">
@@ -255,9 +279,24 @@ const DeveloperProfile: React.FC = () => {
                       <Coffee className="h-5 w-5 mr-2" /> 
                       Hobbies & Interests
                     </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {['Dancing', 'Trekking', 'Reading', 'Swimming'].map((hobby, index) => (
-                        <Badge key={index} variant="secondary">{hobby}</Badge>
+                    <div className="flex flex-wrap gap-3">
+                      {['Philosophy', 'Reading', 'Travel', 'Trekking', 'Bike Trips', 'Restaurant hopping'].map((hobby, index) => (
+                        <span 
+                          key={index}
+                          className="
+                            text-sm
+                            px-4 py-2 
+                            rounded-full 
+                            bg-primary/10 
+                            text-primary 
+                            font-medium 
+                            shadow-sm 
+                            hover:bg-primary/20 
+                            transition
+                          "
+                        >
+                          {hobby}
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -340,17 +379,6 @@ const DeveloperProfile: React.FC = () => {
                         </div>
                       </div>
                       
-                      {edu.courses && (
-                        <div className="mt-3">
-                          <div className="text-sm font-medium mb-2">Relevant Coursework</div>
-                          <div className="flex flex-wrap gap-2">
-                            {edu.courses.map((course, i) => (
-                              <Badge key={i} variant="secondary">{course}</Badge>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                      
                       {index < education.length - 1 && (
                         <Separator className="mt-6" />
                       )}
@@ -367,7 +395,19 @@ const DeveloperProfile: React.FC = () => {
                             <div className="bg-primary/10 p-2 rounded-full mr-3">
                               {React.cloneElement(project.icon, { className: "h-5 w-5 text-primary" })}
                             </div>
-                            <CardTitle>{project.name}</CardTitle>
+                            {project.link ? (
+                              <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:underline"
+                              >
+                                <CardTitle>{project.name}</CardTitle>
+                              </a>
+                            ) : (
+                              <CardTitle>{project.name}</CardTitle>
+                            )}
+
                           </div>
                           <Badge variant="outline">{project.date}</Badge>
                         </div>
