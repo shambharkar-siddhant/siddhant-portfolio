@@ -288,7 +288,7 @@ export default function HomePage() {
             ✨
           </motion.div>
           <motion.div 
-            className="absolute top-10 left-10 text-primary opacity-70"
+            className="absolute top-0 left-4 text-primary opacity-50"
             animate={{ 
               scale: [0.9, 1.3, 0.9],
               opacity: [0.4, 0.9, 0.4],
