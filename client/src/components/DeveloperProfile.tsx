@@ -186,7 +186,7 @@ const DeveloperProfile: React.FC = () => {
     email: 'shambharkarsiddhant0698@gmail.com',
     phone: '+918149600848',
     linkedin: 'linkedin.com/in/siddhant-shambharkar',
-    github: 'https://github.com/shambharkar-siddhant'
+    github: 'github.com/shambharkar-siddhant'
   };
   
   return (
