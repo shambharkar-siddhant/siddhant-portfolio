@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown, Server, Terminal, Code, ArrowDown, ArrowRight, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import avatarImage from "@assets/ChatGPT Image Apr 10, 2025, 08_54_14 PM-Photoroom.png";
+import avatarImage from "@assets/character.png";
 
 interface SectionProps {
   title: string;
@@ -212,11 +212,18 @@ export default function HomePage() {
             }}
             className="relative z-10"
           >
-            <img 
-              src={avatarImage} 
-              alt="Siddhant 3D Avatar" 
-              className="w-[280px] md:w-[350px] lg:w-[400px] h-auto drop-shadow-2xl"
-            />
+          <img 
+            src={avatarImage} 
+            alt="Siddhant 3D Avatar"
+            className="
+              w-[340px] 
+              md:w-[450px] 
+              lg:w-[450px] 
+              xl:w-[600px]
+              h-auto 
+              drop-shadow-2xl
+            "
+          />
           </motion.div>
         </motion.div>
         
